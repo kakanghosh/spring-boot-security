@@ -1,0 +1,19 @@
+package com.welldev.demosecurity.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+@Controller
+public class HomeController {
+
+    @RequestMapping(method = RequestMethod.GET, path = "/")
+    public String getHomePage(){
+        return  "home.jsp";
+    }
+
+    @RequestMapping(method = RequestMethod.GET, path = "/about")
+    public String getAboutPage(){
+        return  "about.jsp";
+    }
+}
