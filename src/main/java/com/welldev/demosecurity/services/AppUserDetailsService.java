@@ -1,5 +1,6 @@
 package com.welldev.demosecurity.services;
 
+import com.welldev.demosecurity.models.User;
 import com.welldev.demosecurity.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -15,6 +16,7 @@ public class AppUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
-        return userRepository.findByUserName(s);
+        User user = userRepository.findByUserName(s);
+        return user == null ? new User() : user;
     }
 }
