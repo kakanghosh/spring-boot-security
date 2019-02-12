@@ -9,14 +9,14 @@ import java.util.Collection;
 import java.util.Collections;
 
 @Entity
-@Table(name = "users")
+//@Table(name = "users")
 public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Column(name = "user_name")
+    //@Column(name = "user_name")
     private String userName;
-    @Column(name = "password")
+    //@Column(name = "password")
     private String password;
 
     public Long getId() {
